@@ -5,10 +5,13 @@ TARGETS = \
 
 SHARED_DEPS = \
 	Makefile \
+	shared.tex \
 
 REPORT_DEPS = \
 	${SHARED_DEPS} \
-	shared.tex \
+
+PRESENTATION_DEPS = \
+	${SHARED_DEPS} \
 
 LATEX_ENGINE = lualatex
 
@@ -29,4 +32,12 @@ report.pdf: report.tex ${REPORT_DEPS}
 	biber report.bcf
 	${LATEX_ENGINE} -shell-escape report.tex
 	${LATEX_ENGINE} -shell-escape report.tex
+
+presentation.pdf: presentation.tex ${PRESENTATION_DEPS}
+	${LATEX_ENGINE} -shell-escape presentation.tex
+	${LATEX_ENGINE} -shell-escape presentation.tex
+
+handouts.pdf: handouts.tex ${PRESENTATION_DEPS}
+	${LATEX_ENGINE} -shell-escape handouts.tex
+	${LATEX_ENGINE} -shell-escape handouts.tex
 
