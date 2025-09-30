@@ -1,5 +1,7 @@
 TARGETS = \
 	report.pdf \
+	presentation.pdf \
+	handouts.pdf \
 
 SHARED_DEPS = \
 	Makefile \
@@ -23,8 +25,8 @@ mrproper: clean
 
 
 report.pdf: report.tex ${REPORT_DEPS}
-	${LATEX_ENGINE} report.tex
+	${LATEX_ENGINE} -shell-escape report.tex
 	biber report.bcf
-	${LATEX_ENGINE} report.tex
-	${LATEX_ENGINE} report.tex
+	${LATEX_ENGINE} -shell-escape report.tex
+	${LATEX_ENGINE} -shell-escape report.tex
 
