@@ -1,0 +1,50 @@
+\documentclass[a4paper, oneside]{memoir}
+
+\input{shared.tex}
+
+% font work
+\usepackage{fontspec}
+\newfontface\lserif{Liberation Serif}
+
+% biblatex setup
+\usepackage[
+  backend=biber,
+]{biblatex}
+\addbibresource{references.bib}
+
+% tikz config
+\usetikzlibrary{shapes,fit,calc}
+
+% styling
+\setsecnumdepth{subsubsection} % how deep to number sections
+\setlength{\parskip}{2mm} % vertical space between paragraphs
+\setlength{\parindent}{0mm} % horizontal indent for first line of paragraph
+
+\begin{document}
+
+% front matter
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+\listoffigures
+%\newpage
+%\listoftables
+
+\chapter{Introduction}
+
+This document does not teach you neither how to work on a project or how to write. For that, you will have to look elsewhere\cite{reportwriting}.
+
+\chapter{Analysis}
+\chapter{Design}
+\chapter{Implementation}
+\chapter{Evaluation}
+\chapter{Discussion}
+\chapter{Conclusion}
+
+% back matter
+\appendix
+\chapter{Some Appendix}
+\printbibliography
+
+\end{document}
