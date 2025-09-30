@@ -40,4 +40,14 @@
 \newcommand{\term}[1]{\textsl{#1}}
 \newcommand{\highlight}[1]{\textcolor{olive}{#1}}
 
+\newcommand{\includeSVG}[1]{
+\includegraphics[scale=1.0]{./material/gen/#1.pdf}
+}
+\newcommand{\includeSVGfs}[1]{
+\includegraphics[width=\paperwidth]{./material/gen/#1.pdf}
+}
+\newcommand{\includeBitmap}[2]{
+\includegraphics[width=#2]{./material/src/#1}
+}
+
 \input{meta.tex}

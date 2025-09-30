@@ -30,7 +30,12 @@ mrproper: clean
 	rm    *.nav *.snm *.vrb
 
 
-report.pdf: report.tex ${REPORT_DEPS}
+.report_timestamp: report.tex ${REPORT_DEPS}
+	cd .. ; bin/generate-tex-includes PDF doc/report.tex doc
+	touch .report_timestamp
+
+
+report.pdf: report.tex ${REPORT_DEPS} .report_timestamp
 	${LATEX_ENGINE} -shell-escape report.tex
 	biber report.bcf
 	${LATEX_ENGINE} -shell-escape report.tex
