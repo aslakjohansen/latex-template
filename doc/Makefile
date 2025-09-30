@@ -9,6 +9,7 @@ SHARED_DEPS = \
 
 REPORT_DEPS = \
 	${SHARED_DEPS} \
+	report/*.tex \
 
 PRESENTATION_DEPS = \
 	${SHARED_DEPS} \
