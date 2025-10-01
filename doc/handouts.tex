@@ -2,6 +2,14 @@
 
 \input{shared}
 
+% remove footer
+\setbeamertemplate{footline}[page number]{} % gets rid of bottom navigation bars
+\setbeamertemplate{navigation symbols}{} % gets rid of navigation symbols
+\usecolortheme{default}
+\definecolor{structurecolor}{RGB}{21,66,129}
+\setbeamercolor{structure}{fg=structurecolor}
+\setbeamertemplate{footline}{}
+
 \begin{document}
 \input{slides}
 \end{document}
