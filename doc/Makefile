@@ -11,7 +11,7 @@ REPORT_DEPS = \
 	${SHARED_DEPS} \
 	report/*.tex \
 
-SLideS_DEPS = \
+SLIDES_DEPS = \
 	${SHARED_DEPS} \
 	slides/*.tex \
 
@@ -35,7 +35,7 @@ mrproper: clean
 	cd .. ; bin/generate-tex-includes PDF doc/report.tex doc
 	touch .report_timestamp
 
-.slides_timestamp: slides.tex ${REPORT_DEPS}
+.slides_timestamp: slides.tex ${SLIDES_DEPS}
 	cd .. ; bin/generate-tex-includes PDF doc/slides.tex doc
 	touch .slides_timestamp
 
