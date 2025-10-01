@@ -11,7 +11,7 @@ REPORT_DEPS = \
 	${SHARED_DEPS} \
 	report/*.tex \
 
-PRESENTATION_DEPS = \
+SLideS_DEPS = \
 	${SHARED_DEPS} \
 	slides/*.tex \
 
@@ -35,6 +35,10 @@ mrproper: clean
 	cd .. ; bin/generate-tex-includes PDF doc/report.tex doc
 	touch .report_timestamp
 
+.slides_timestamp: slides.tex ${REPORT_DEPS}
+	cd .. ; bin/generate-tex-includes PDF doc/slides.tex doc
+	touch .slides_timestamp
+
 
 report.pdf: report.tex ${REPORT_DEPS} .report_timestamp
 	${LATEX_ENGINE} -shell-escape report.tex
@@ -42,11 +46,11 @@ report.pdf: report.tex ${REPORT_DEPS} .report_timestamp
 	${LATEX_ENGINE} -shell-escape report.tex
 	${LATEX_ENGINE} -shell-escape report.tex
 
-presentation.pdf: presentation.tex ${PRESENTATION_DEPS}
+presentation.pdf: presentation.tex ${SLIDES_DEPS} .slides_timestamp
 	${LATEX_ENGINE} -shell-escape presentation.tex
 	${LATEX_ENGINE} -shell-escape presentation.tex
 
-handouts.pdf: handouts.tex ${PRESENTATION_DEPS}
+handouts.pdf: handouts.tex ${SLIDES_DEPS} .slides_timestamp
 	${LATEX_ENGINE} -shell-escape handouts.tex
 	${LATEX_ENGINE} -shell-escape handouts.tex
 
