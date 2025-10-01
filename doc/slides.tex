@@ -2,33 +2,54 @@
 \newcommand{\componentB}{0.96}
 \newcommand{\componentC}{0.997}
 
-\definecolor{intro}{rgb}{\componentA, \componentB, \componentC}
+\definecolor{colorI}{rgb}{  \componentA, \componentB, \componentC}
+\definecolor{colorII}{rgb} {\componentB, \componentC, \componentA}
+\definecolor{colorIII}{rgb}{\componentC, \componentA, \componentB}
 
 \newcommand{\bgcolor}{Purple} % this should be renewed below
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% background color pre
 {
-\setbeamercolor{background canvas}{bg=intro}
-\renewcommand{\bgcolor}{intro}
+  \setbeamercolor{background canvas}{bg=colorI}
+  \renewcommand{\bgcolor}{colorI}
+  \input{slides/introduction.tex}
+}
 
-\section{Introduction}
-\begin{frame}
-  \vspace{25mm}
-  \begin{center}
-    \Huge{Part 1:\\Introduction}
-  \end{center}
-\end{frame}
+{
+  \setbeamercolor{background canvas}{bg=colorII}
+  \renewcommand{\bgcolor}{colorII}
+  \input{slides/analysis.tex}
+}
 
-\subsection{Context}
-\begin{frame}[fragile]
-  \frametitle{Context}
-  \vspace{3mm}
-  
-\end{frame}
+{
+  \setbeamercolor{background canvas}{bg=colorIII}
+  \renewcommand{\bgcolor}{colorIII}
+  \input{slides/design.tex}
+}
 
-% background color post
+{
+  \setbeamercolor{background canvas}{bg=colorI}
+  \renewcommand{\bgcolor}{colorI}
+  \input{slides/implementation.tex}
+}
+
+{
+  \setbeamercolor{background canvas}{bg=colorII}
+  \renewcommand{\bgcolor}{colorII}
+  \input{slides/evaluation.tex}
+}
+
+{
+  \setbeamercolor{background canvas}{bg=colorIII}
+  \renewcommand{\bgcolor}{colorIII}
+  \input{slides/discussion.tex}
+}
+
+{
+  \setbeamercolor{background canvas}{bg=colorI}
+  \renewcommand{\bgcolor}{colorI}
+  \input{slides/conclusion.tex}
 }
 

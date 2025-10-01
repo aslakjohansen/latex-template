@@ -13,6 +13,7 @@ REPORT_DEPS = \
 
 PRESENTATION_DEPS = \
 	${SHARED_DEPS} \
+	slides/*.tex \
 
 LATEX_ENGINE = lualatex
 
